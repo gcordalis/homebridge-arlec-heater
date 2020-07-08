@@ -110,7 +110,7 @@ FanAccessory.prototype.getTemperature = function(callback) {
 
   if (this.tuyaDevice.isConnected()) {
     this.tuyaDevice
-      .get({ dps: 3 })
+      .get({ dps: 2 })
       .then(temperature => {
         var percentage = Math.ceil((temperature - 15) * 5);
         this.log(
@@ -139,7 +139,7 @@ FanAccessory.prototype.setTemperature = function(temperature, callback) {
 
   if (this.tuyaDevice.isConnected()) {
     this.tuyaDevice
-      .set({ dps: 3, set: temperatureIncrement })
+      .set({ dps: 2, set: temperatureIncrement })
       .then(success => {
         this.log("Set temperature " + success ? "succeeded" : "failed");
         callback(success ? null : "error");
@@ -155,7 +155,7 @@ FanAccessory.prototype.getSwingMode = function(callback) {
 
   if (this.tuyaDevice.isConnected()) {
     this.tuyaDevice
-      .get({ dps: 7 })
+      .get({ dps: 4 })
       .then(state => {
         var swingMode = state
           ? Characteristic.SwingMode.SWING_ENABLED
@@ -175,7 +175,7 @@ FanAccessory.prototype.setSwingMode = function(state, callback) {
   if (this.tuyaDevice.isConnected()) {
     this.tuyaDevice
       .set({
-        dps: 7,
+        dps: 4,
         set: state == Characteristic.SwingMode.SWING_ENABLED ? "High" : "Low"
       })
       .then(success => {
@@ -189,11 +189,11 @@ FanAccessory.prototype.setSwingMode = function(state, callback) {
 };
 
 FanAccessory.prototype.getLockPhysicalControls = function(callback) {
-  this.log("Getting current light status...");
+  this.log("Getting current lock status...");
 
   if (this.tuyaDevice.isConnected()) {
     this.tuyaDevice
-      .get({ dps: 2 })
+      .get({ dps: 6 })
       .then(state => {
         var lightStatus = state
           ? Characteristic.LockPhysicalControls.CONTROL_LOCK_ENABLED
@@ -208,19 +208,19 @@ FanAccessory.prototype.getLockPhysicalControls = function(callback) {
 };
 
 FanAccessory.prototype.setLockPhysicalControls = function(state, callback) {
-  this.log("Set light status to %s", state);
+  this.log("Set lock status to %s", state);
 
   if (this.tuyaDevice.isConnected()) {
     this.tuyaDevice
       .set({
-        dps: 2,
+        dps: 6,
         set:
           state == Characteristic.LockPhysicalControls.CONTROL_LOCK_ENABLED
             ? true
             : false
       })
       .then(success => {
-        this.log("Set light status " + success ? "succeeded" : "failed");
+        this.log("Set lock status " + success ? "succeeded" : "failed");
         callback(success ? null : "error");
       })
       .catch(err => callback(err));
