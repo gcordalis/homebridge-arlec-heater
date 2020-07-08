@@ -1,17 +1,17 @@
 {
-  "name": "homebridge-goldair-heater",
+  "name": "homebridge-arlec-heater",
   "version": "0.0.1",
-  "description": "Goldair Heater plugin for homebridge: https://github.com/nfarina/homebridge",
+  "description": "arlec Heater plugin for homebridge: https://github.com/nfarina/homebridge",
   "license": "MIT",
   "keywords": [
     "homebridge-plugin"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:gcordalis/homebridge-goldair-heater.git"
+    "url": "git@github.com:gcordalis/homebridge-arlec-heater.git"
   },
   "bugs": {
-    "url": "https://github.com/gcordalis/homebridge-goldair-heater/issues"
+    "url": "https://github.com/gcordalis/homebridge-arlec-heater/issues"
   },
   "engines": {
     "node": ">=0.12.0",

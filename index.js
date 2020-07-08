@@ -7,8 +7,8 @@ module.exports = function(homebridge) {
   Characteristic = homebridge.hap.Characteristic;
 
   homebridge.registerAccessory(
-    "homebridge-goldair-fan",
-    "goldairHeater",
+    "homebridge-arlec-fan",
+    "arlecHeater",
     FanAccessory
   );
 };

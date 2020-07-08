@@ -1,6 +1,6 @@
-# homebridge-goldair-heater
+# homebridge-arlec-heater
 
-`homebridge-goldair-heater` is a plugin for HomeBridge which allows you to control your Goldair Heater.
+`homebridge-arlec-heater` is a plugin for HomeBridge which allows you to control your arlec Heater.
 
 ## Features
 
@@ -26,7 +26,7 @@ npm install -g homebridge
 Install this plugin:
 
 ```sh
-npm install -g homebridge-goldair-heater
+npm install -g homebridge-arlec-heater
 ```
 
 ## Configuration
@@ -38,8 +38,8 @@ Example configuration:
 ```js
 "accessories": [
   {
-    "accessory": "goldairHeater",
-    "name": "Goldair Heater",
+    "accessory": "arlecHeater",
+    "name": "arlec Heater",
     "id": "XXXXXXXXXXXXXXXXXXXX",
     "key": "XXXXXXXXXXXXXXXX",
     "ip": "X.X.X.X"
