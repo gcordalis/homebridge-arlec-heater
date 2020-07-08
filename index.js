@@ -176,7 +176,7 @@ FanAccessory.prototype.setSwingMode = function(state, callback) {
     this.tuyaDevice
       .set({
         dps: 4,
-        set: state == Characteristic.SwingMode.SWING_ENABLED ? "High" : "Low"
+        set: state == Characteristic.SwingMode.SWING_ENABLED ? "high" : "low"
       })
       .then(success => {
         this.log("Set SwingMode " + success ? "succeeded" : "failed");
